@@ -6,7 +6,7 @@ description 'Advanced vehicle key management system'
 version '1.0.0'
 
 -- [!] ATTENTION: Please read the README.md file before installation and use!
--- [!] Support / Discord: https://discord.gg/smqscripts
+-- [!] Support / Discord: https://discord.gg/z7x6dD3yXm
 
 shared_scripts {
     '@es_extended/imports.lua',
@@ -32,5 +32,6 @@ dependencies {
 
 -- Metadata & Links
 repository 'https://github.com/smqscripts/smq_jobgarage'
-discord 'https://discord.gg/smqscripts'
-youtube 'https://youtube.com/@smqscripts'
+discord 'https://discord.gg/z7x6dD3yXm'
+
+youtube 'https://www.youtube.com/watch?v=Bb6phzY8UUc'
