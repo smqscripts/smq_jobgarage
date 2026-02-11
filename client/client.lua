@@ -16,7 +16,7 @@ local function spawn_car(data, garage)
     Entity(v).state:set('initVehicle', true, true)
     
     TriggerServerEvent('smq_jobgarage:load_inv', data.plate)
-    TriggerServerEvent('smq_jobgarage:give_key', data.plate)
+    if Config.GiveKeys then TriggerServerEvent('smq_jobgarage:give_key', data.plate) end
     TriggerServerEvent('smq_jobgarage:set_state', data.plate, 0)
     
     TaskWarpPedIntoVehicle(PlayerPedId(), v, -1)
@@ -34,10 +34,9 @@ local function park_car()
         
         Wait(500)
         if DoesEntityExist(veh) then DeleteEntity(veh) end
-
         lib.notify({description = 'Stored.', type = 'inform'})
     else
-        lib.notify({description = 'No car near you', type = 'error'})
+        lib.notify({description = 'No vehicle found', type = 'error'})
     end
 end
 
@@ -46,7 +45,6 @@ function open_menu(id)
 
     ESX.TriggerServerCallback('smq_jobgarage:get_cars', function(res)
         local m = {}
-
         if res then
             for k, v in pairs(res) do
                 table.insert(m, {
@@ -59,7 +57,7 @@ function open_menu(id)
         end
         
         table.insert(m, {
-            title = "Buy Vehicle",
+            title = "Purchase Vehicle",
             icon = 'plus',
             onSelect = function()
                 local s = {}
