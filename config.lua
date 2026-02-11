@@ -2,9 +2,9 @@ Config = {}
 
 Config.Locale = 'en'
 Config.KeyItem = 'vehicle_key'
+Config.GiveKeys = true -- true/false --
 
 Config.Garages = {
-    -- POLICE
     ['police_car'] = {
         label = "Mission Row PD",
         job = "police",
@@ -27,8 +27,6 @@ Config.Garages = {
             { label = "Maverick", model = "jcon" },
         }
     },
-
-    -- AMBULANCE
     ['ems_car'] = {
         label = "Pillbox Hospital",
         job = "ambulance",
